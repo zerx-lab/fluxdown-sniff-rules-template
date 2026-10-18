@@ -1,0 +1,29 @@
+{
+  "namespace": "your-name",
+  "hosts": ["example.com"],
+  "rules": [
+    {
+      "id": "community.your-name.example-video",
+      "version": 1,
+      "tier": "community",
+      "title": "Example：把 .xyz 文件识别为视频",
+      "stage": "response",
+      "match": { "host": ["example.com"], "ext": ["xyz"] },
+      "action": { "kind": "resource", "type": "video" }
+    }
+  ],
+  "tests": [
+    {
+      "name": "example.com 上的 .xyz 识别为视频",
+      "call": "classifyResponse",
+      "args": [{ "url": "https://cdn.example.com/v/a.xyz", "pageUrl": "https://www.example.com/watch/1", "size": 0, "attachment": false }],
+      "expect": { "decision": "resource", "type": "video", "rule": { "id": "community.your-name.example-video" } }
+    },
+    {
+      "name": "其它站点不受影响",
+      "call": "classifyResponse",
+      "args": [{ "url": "https://other.org/a.xyz", "pageUrl": "https://other.org/", "size": 0, "attachment": false }],
+      "expect": { "decision": "none" }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+name: release
+
+# 推送 v* 标签：先检查，通过后创建 Release 并上传 sniff-rules.json。
+# FluxDown 规则仓每小时读取你的 Latest Release，自动收录。
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  check:
+    uses: zerx-lab/fluxdown-sniff-rules/.github/workflows/author-check.yml@main
+
+  release:
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+        run: gh release create "$TAG" sniff-rules.json --title "$TAG" --generate-notes --latest

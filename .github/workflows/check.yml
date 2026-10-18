@@ -1,0 +1,12 @@
+name: check
+
+# 每次推送 / PR 都用 FluxDown 规则仓的最新校验器检查 sniff-rules.json（与收录时相同）。
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    uses: zerx-lab/fluxdown-sniff-rules/.github/workflows/author-check.yml@main
