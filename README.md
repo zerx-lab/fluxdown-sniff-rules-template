@@ -2,9 +2,9 @@
 
 用这个模板创建**你自己的** FluxDown 嗅探规则仓库。在 [zerx-lab/fluxdown-sniff-rules](https://github.com/zerx-lab/fluxdown-sniff-rules) 登记一次之后，你每发布一个 Release，规则仓都会在一小时内自动收录、签名，并下发给所有 FluxDown 用户，不需要每次提 PR 等审核。
 
-*English: create your own FluxDown sniff-rule repository from this template, register it once in [zerx-lab/fluxdown-sniff-rules](https://github.com/zerx-lab/fluxdown-sniff-rules), then every Release you publish is picked up automatically within an hour. Full guide: <https://fluxdown.zerx.dev/docs/en/contributing/sniff-rules/>.*
+*English: create your own FluxDown sniff-rule repository from this template, register it once in [zerx-lab/fluxdown-sniff-rules](https://github.com/zerx-lab/fluxdown-sniff-rules), then every Release you publish is picked up automatically within an hour. Full guide: <https://fluxdown.com/docs/en/contributing/sniff-rules/>.*
 
-完整说明：[贡献嗅探规则](https://fluxdown.zerx.dev/docs/zh/contributing/sniff-rules/) · 字段参考：[嗅探规则参考](https://fluxdown.zerx.dev/docs/zh/browser-extension/sniff-rules/)
+完整说明：[贡献嗅探规则](https://fluxdown.com/docs/zh/contributing/sniff-rules/) · 字段参考：[嗅探规则参考](https://fluxdown.com/docs/zh/browser-extension/sniff-rules/)
 
 ## 1. 创建仓库
 
